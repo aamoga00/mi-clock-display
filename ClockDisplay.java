@@ -43,4 +43,12 @@ public class ClockDisplay
         
         }
     }
+    /**
+     * Metodo que muestra en una cadena de caracteres la hora actual.
+     */
+    public String getTime() 
+    {
+    
+       return horaActual;
+    }
 }
