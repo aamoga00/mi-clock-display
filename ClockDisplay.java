@@ -10,5 +10,15 @@ public class ClockDisplay
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String horaActual;
-    
+ 
+//Constructor de la clase ClockDisplay   
+public ClockDisplay()
+    {
+        hours = new NumberDisplay(24);
+        minutes = new NumberDisplay(60);
+        horaActual = "00:00";
+        
+        
+    }
+        
 }
