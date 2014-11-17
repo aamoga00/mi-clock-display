@@ -47,4 +47,11 @@
         }
         return returnedValue; // intentar en cada metodo solo utilizar un return (obligatorio en junio)
     }
+  /**
+     * Devuelve el valor actual del atributo value
+     */
+    public int getValue()
+    {
+        return value;
+    }
 }
