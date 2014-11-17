@@ -1,4 +1,11 @@
 #BlueJ class context
 comment0.params=
 comment0.target=ClockDisplay()
-numComments=1
+comment0.text=\r\n\ Constructor\ sin\ parametros\ de\ la\ clase\ ClockDisplay\r\n
+comment1.params=newHours\ newMinutes
+comment1.target=ClockDisplay(int,\ int)
+comment1.text=\r\n\ Constructor\ con\ parametros\ de\ la\ clase\ ClockDisplay\r\n
+comment2.params=newHours\ newMinutes
+comment2.target=void\ setTime(int,\ int)
+comment2.text=\r\n\ Metodo\ que\ fija\ unas\ horas\ y\ minutos\ a\ la\ hora\ actual\r\n
+numComments=3
