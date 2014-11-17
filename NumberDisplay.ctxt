@@ -2,4 +2,7 @@
 comment0.params=newLimit
 comment0.target=NumberDisplay(int)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ NumberDisplay\r\n
-numComments=1
+comment1.params=newValue
+comment1.target=void\ setValue(int)
+comment1.text=\r\n\ Method\ tha\ add\ a\ new\ value\ \ \r\n
+numComments=2

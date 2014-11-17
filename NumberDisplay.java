@@ -19,4 +19,14 @@
         value = 0;
         limit = newLimit;
     }
+/**
+  * Method tha add a new value  
+  */
+   public void setValue(int newValue)
+   {
+     if((newValue < limit) && (newValue >=0))
+     {
+        value = newValue;
+     }
+   }
 }
