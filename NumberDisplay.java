@@ -29,4 +29,22 @@
         value = newValue;
      }
    }
+ /**
+     * Devuelve por pantalla una cadena de dos caracteres con el valor del atributo value
+     */
+    public String getDisplayValue()
+    {
+        String returnedValue ="";
+        if(value < 10)
+        {
+            returnedValue= "0" + value;
+        }
+    
+        else
+        {
+            returnedValue =  "" + value;
+        
+        }
+        return returnedValue; // intentar en cada metodo solo utilizar un return (obligatorio en junio)
+    }
 }
