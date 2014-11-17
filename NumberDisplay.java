@@ -47,11 +47,27 @@
         }
         return returnedValue; // intentar en cada metodo solo utilizar un return (obligatorio en junio)
     }
-  /**
-     * Devuelve el valor actual del atributo value
-     */
+ /**
+    * Devuelve el valor actual del atributo value
+    */
     public int getValue()
     {
         return value;
     }
+  /**
+    * incrementa en 1 el valor de value y lo devuelve a 0 si alcanza el limite
+    */
+    public void increment()// tambien value = value +1
+    //
+    {
+        if(value < (limit-1))
+        {
+            value = value+1;
+        }
+        else 
+        {
+            value = 0;
+        }
+    
+    }  
 }
