@@ -45,7 +45,7 @@ public class ClockDisplay
      */
     public String getTime() 
     {
-    
+       horaActual = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
        return horaActual;
     }
 }
