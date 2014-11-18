@@ -11,25 +11,26 @@ public class ClockDisplay
     private NumberDisplay minutes;
     private String horaActual;
     /**
-     * Constructor sin parametros de la clase ClockDisplay
+     * Constructor sin parametros de la clase ClockDisplay, reloj a 00:00
      */
     public ClockDisplay()
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
-        horaActual = "00:00";
+        horaActual = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
         
         
     }
     /**
      * Constructor con parametros de la clase ClockDisplay
      */
-    public ClockDisplay(int newHours, int newMinutes)
+    public ClockDisplay(int hours2, int minutes2)
     {   
         hours = new NumberDisplay(24);
+        hours.setValue(hours2);
         minutes = new NumberDisplay(60);
-        horaActual = newHours + ":" + newMinutes;
-        
+        minutes.setValue(minutes2);
+        horaActual = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
     }  
     /**
      * Metodo que fija unas horas y minutos a la hora actual

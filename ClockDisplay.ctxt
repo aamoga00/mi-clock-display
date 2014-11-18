@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=ClockDisplay()
-comment0.text=\r\n\ Constructor\ sin\ parametros\ de\ la\ clase\ ClockDisplay\r\n
-comment1.params=newHours\ newMinutes
+comment0.text=\r\n\ Constructor\ sin\ parametros\ de\ la\ clase\ ClockDisplay,\ reloj\ a\ 00\:00\r\n
+comment1.params=hours2\ minutes2
 comment1.target=ClockDisplay(int,\ int)
 comment1.text=\r\n\ Constructor\ con\ parametros\ de\ la\ clase\ ClockDisplay\r\n
 comment2.params=newHours\ newMinutes
