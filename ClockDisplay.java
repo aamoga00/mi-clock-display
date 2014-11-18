@@ -37,12 +37,8 @@ public class ClockDisplay
      */
     public void setTime(int newHours, int newMinutes)
     {
-        if((newHours < 24) && (newHours >= 0)&&(newMinutes < 60) && (newMinutes >= 0))
-        {
-            
-            horaActual = newHours + ":"+ newMinutes;
-        
-        }
+        hours.setValue(newHours);
+        minutes.setValue(newMinutes);
     }
     /**
      * Metodo que muestra en una cadena de caracteres la hora actual.
