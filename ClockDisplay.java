@@ -48,4 +48,15 @@ public class ClockDisplay
        horaActual = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
        return horaActual;
     }
+    /**
+     * Metodo que hace avanzar un minuto la hora actual que marca el reloj
+     */
+    public void timeTick()
+    {
+        minutes.increment();
+        if(minutes.value==00)
+        {
+            hours.increment();
+        }
+    }
 }
