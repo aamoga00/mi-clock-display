@@ -45,10 +45,19 @@ public class ClockDisplay
         updateDisplay();
     }
     /**
-     * Metodo que muestra en una cadena de 5 caracteres con la hora y los minutos separados por dos puntos
+     * Metodo que muestra en una cadena de 5 caracteres con la hora y los minutos separados por dos puntos, en formato de 12 horas
      */
     public String getTime() 
     {
+       if (hours.getValue()<=12)
+       {
+        displayString = (hours.getDisplayValue()+":"+minutes.getDisplayValue()+" am");
+       }
+       else if (hours.getValue()>12)
+       {
+       hours.setValue(hours.getValue()-12);
+       displayString = (hours.getDisplayValue()+":"+minutes.getDisplayValue()+" pm");
+       }
        return displayString;
     }
     /**
