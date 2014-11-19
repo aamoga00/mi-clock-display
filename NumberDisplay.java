@@ -8,7 +8,7 @@
     public class NumberDisplay
 {
     // instance variables - replace the example below with your own
-    public int value;
+    private int value;
     private int limit;
 /**
      * Constructor for objects of class NumberDisplay
@@ -71,3 +71,4 @@
     
     }  
 }
+

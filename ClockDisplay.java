@@ -7,9 +7,12 @@
  */
 public class ClockDisplay
 {
+    //Nos guarda las horas
     private NumberDisplay hours;
+    //Nos guarda los minutos
     private NumberDisplay minutes;
-    private String horaActual;
+    //Un string de 5 caracteres: la hora, dos puntos y los minutos
+    private String displayString;
     /**
      * Constructor sin parametros de la clase ClockDisplay, reloj a 00:00
      */
@@ -17,36 +20,36 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
-        horaActual = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
+        updateDisplay();
         
         
     }
     /**
      * Constructor con parametros de la clase ClockDisplay
      */
-    public ClockDisplay(int hours2, int minutes2)
+    public ClockDisplay(int newHours, int newMinutes)
     {   
         hours = new NumberDisplay(24);
-        hours.setValue(hours2);
+        hours.setValue(newHours);
         minutes = new NumberDisplay(60);
-        minutes.setValue(minutes2);
-        horaActual = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
+        minutes.setValue(newMinutes);
+        updateDisplay();
     }  
     /**
      * Metodo que fija unas horas y minutos a la hora actual
      */
-    public void setTime(int newHours, int newMinutes)
+    public void setTime(int new2Hours, int new2Minutes)
     {
-        hours.setValue(newHours);
-        minutes.setValue(newMinutes);
+        hours.setValue(new2Hours);
+        minutes.setValue(new2Minutes);
+        updateDisplay();
     }
     /**
-     * Metodo que muestra en una cadena de caracteres la hora actual.
+     * Metodo que muestra en una cadena de 5 caracteres con la hora y los minutos separados por dos puntos
      */
     public String getTime() 
     {
-       horaActual = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
-       return horaActual;
+       return displayString;
     }
     /**
      * Metodo que hace avanzar un minuto la hora actual que marca el reloj
@@ -54,9 +57,17 @@ public class ClockDisplay
     public void timeTick()
     {
         minutes.increment();
-        if(minutes.value==00)
+        if(minutes.getValue()==0)   
         {
             hours.increment();
         }
+        updateDisplay();
+    }
+    /**
+     * Actualiza el atributo displayString
+     */
+    private void updateDisplay()
+    {
+        displayString = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
     }
 }
