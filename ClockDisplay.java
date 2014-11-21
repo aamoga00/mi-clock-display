@@ -13,6 +13,12 @@ public class ClockDisplay
     private NumberDisplay minutes;
     //Un string de 5 caracteres: la hora, dos puntos y los minutos
     private String displayString;
+    //Nos guarda el año.
+    private NumberDisplay year;
+    //Nos guarda los dias
+    private NumberDisplay day;
+    //Nos guarda el mes
+    private NumberDisplay month; 
     /**
      * Constructor sin parametros de la clase ClockDisplay, reloj a 00:00
      */
@@ -27,12 +33,18 @@ public class ClockDisplay
     /**
      * Constructor con parametros de la clase ClockDisplay
      */
-    public ClockDisplay(int newHours, int newMinutes)
+    public ClockDisplay(int newHours, int newMinutes, int newYear, int newDay, int newMonth)
     {   
         hours = new NumberDisplay(24);
         hours.setValue(newHours);
         minutes = new NumberDisplay(60);
         minutes.setValue(newMinutes);
+        day = new NumberDisplay(30);
+        day.setValue(newDay);
+        month = new NumberDisplay(12);
+        month.setValue(newMonth);
+        year = new NumberDisplay(3000);
+        year.setValue(newYear);
         updateDisplay();
     }  
     /**
@@ -49,19 +61,6 @@ public class ClockDisplay
      */
     public String getTime() 
     {
-       if (hours.getValue()<12)
-       {
-           displayString = (hours.getDisplayValue()+":"+minutes.getDisplayValue()+" am");
-       }
-       else if (hours.getValue()==12)
-       {
-           displayString = (hours.getDisplayValue()+":"+minutes.getDisplayValue()+" pm");
-       }
-       else if (hours.getValue()>12)
-       {
-           hours.setValue(hours.getValue()-12);
-           displayString = (hours.getDisplayValue()+":"+minutes.getDisplayValue()+" pm");
-       }
        return displayString;
     }
     /**
@@ -81,6 +80,38 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
-        displayString = (hours.getDisplayValue()+":"+minutes.getDisplayValue());
+      int actualHora = hours.getValue();
+      if(actualHora < 12)
+      {
+          if (actualHora == 0)
+          {
+              displayString = "12"+ ":" + minutes.getDisplayValue() + " am";
+          }
+          else
+          {
+             displayString = hours.getDisplayValue() + ":" + minutes.getDisplayValue() + " am";
+          }
+
+      }
+      else
+      {
+          if (actualHora == 12)
+          {
+              displayString = actualHora + ":" + minutes.getDisplayValue() + " pm";
+          }
+          else
+          { 
+              if((actualHora-12) <10 )
+              {
+                  displayString = "0" + (actualHora-12) + ":" + minutes.getDisplayValue() + " pm";
+              }
+              else
+              {
+                  displayString = (actualHora-12) + ":"  + minutes.getDisplayValue() + " pm";
+              }
+          }
+      }
+    
+       
     }
 }
