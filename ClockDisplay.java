@@ -26,6 +26,9 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(24);
         minutes = new NumberDisplay(60);
+        day = new NumberDisplay(31);
+        month = new NumberDisplay(13);
+        year = new NumberDisplay(99);
         updateDisplay();
         
         
@@ -39,21 +42,24 @@ public class ClockDisplay
         hours.setValue(newHours);
         minutes = new NumberDisplay(60);
         minutes.setValue(newMinutes);
-        day = new NumberDisplay(30);
+        day = new NumberDisplay(31);
         day.setValue(newDay);
-        month = new NumberDisplay(12);
+        month = new NumberDisplay(13);
         month.setValue(newMonth);
-        year = new NumberDisplay(3000);
+        year = new NumberDisplay(99);
         year.setValue(newYear);
         updateDisplay();
     }  
     /**
      * Metodo que fija unas horas y minutos a la hora actual
      */
-    public void setTime(int new2Hours, int new2Minutes)
+    public void setTime(int actual2Hours, int actualMinutes, int actualDay, int actualMonth, int actualYear)
     {
-        hours.setValue(new2Hours);
-        minutes.setValue(new2Minutes);
+        hours.setValue(actualHours);
+        minutes.setValue(actualMinutes);
+        day.setValue(actaalDay);
+        month.setValue(actaulMonth);
+        year.setValue(actualYear);
         updateDisplay();
     }
     /**
