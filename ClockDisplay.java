@@ -32,8 +32,7 @@ public class ClockDisplay
         month = new NumberDisplay(13);
         year = new NumberDisplay(99);
         updateDisplay();
-        
-        
+        updateDate();
     }
     /**
      * Constructor con parametros de la clase ClockDisplay
@@ -51,6 +50,7 @@ public class ClockDisplay
         year = new NumberDisplay(99);
         year.setValue(newYear);
         updateDisplay();
+        updateDate();
     }  
     /**
      * Metodo que fija unas horas y minutos a la hora actual
@@ -63,13 +63,15 @@ public class ClockDisplay
         month.setValue(actualMonth);
         year.setValue(actualYear);
         updateDisplay();
+        updateDate();
     }
     /**
-     * Metodo que muestra en una cadena de 5 caracteres con la hora y los minutos separados por dos puntos, en formato de 12 horas
+     * Metodo que muestra en una cadena de 16 caracteres con la hora en formato de 12 horas y la fecha
      */
     public String getTime() 
     {
-       return displayString;
+       String actualReloj = displayString + " " + dateString;
+        return actualReloj;
     }
     /**
      * Metodo que hace avanzar un minuto la hora actual que marca el reloj
@@ -129,4 +131,3 @@ public class ClockDisplay
     }
 }
 
-}
