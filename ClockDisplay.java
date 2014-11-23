@@ -74,7 +74,7 @@ public class ClockDisplay
         return actualReloj;
     }
     /**
-     * Metodo que hace avanzar un minuto la hora actual que marca el reloj
+     * Metodo que hace avanzar un minuto la hora actual que marca el reloj, cambiando también la fecha.
      */
     public void timeTick()
     {
@@ -82,7 +82,23 @@ public class ClockDisplay
         if(minutes.getValue()==0)   
         {
             hours.increment();
+            if(hours.getValue()==0)
+            {
+                day.increment();
+                if(day.getValue()==0)
+                {
+                    day.increment();
+                    month.increment();
+                    if(month.getValue()==0)
+                    {
+                        month.increment();
+                        year.increment();
+                    }
+                }
+            }
         }
+        updateDisplay();
+        updateDate();
         updateDisplay();
     }
     /**
