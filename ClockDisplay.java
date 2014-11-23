@@ -18,7 +18,9 @@ public class ClockDisplay
     //Nos guarda los dias
     private NumberDisplay day;
     //Nos guarda el mes
-    private NumberDisplay month; 
+    private NumberDisplay month;
+    // String de 8 caracteres que nos guarda la fecha como: dia/mes/año
+    private String dateString;
     /**
      * Constructor sin parametros de la clase ClockDisplay, reloj a 00:00
      */
@@ -53,12 +55,12 @@ public class ClockDisplay
     /**
      * Metodo que fija unas horas y minutos a la hora actual
      */
-    public void setTime(int actual2Hours, int actualMinutes, int actualDay, int actualMonth, int actualYear)
+    public void setTime(int actualHours, int actualMinutes, int actualDay, int actualMonth, int actualYear)
     {
         hours.setValue(actualHours);
         minutes.setValue(actualMinutes);
-        day.setValue(actaalDay);
-        month.setValue(actaulMonth);
+        day.setValue(actualDay);
+        month.setValue(actualMonth);
         year.setValue(actualYear);
         updateDisplay();
     }
@@ -117,7 +119,14 @@ public class ClockDisplay
               }
           }
       }
-    
-       
     }
+     /**
+     * Actualiza la fecha
+     */
+    private void updateDate()
+    {
+        dateString = day.getDisplayValue() + "/" + month.getDisplayValue() + "/" + year.getDisplayValue();
+    }
+}
+
 }
